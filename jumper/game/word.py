@@ -1,6 +1,6 @@
 import random
 
-class Letter:
+class Word:
     def __init__(self):
         randomized_word = self.random_word()
 
@@ -12,5 +12,3 @@ class Letter:
             random_word = random.choice(empty_array)
             random_word = random_word.strip('\n')
             return random_word
-
-Letter()
