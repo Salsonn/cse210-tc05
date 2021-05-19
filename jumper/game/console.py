@@ -1,4 +1,5 @@
 
+
 parachute = [
     [' ___'],
     ['/___\\'],
@@ -27,3 +28,5 @@ class Console:
 
     def print_parachute(self, times_user_was_wrong):
         pass
+
+
