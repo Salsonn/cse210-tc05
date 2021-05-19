@@ -36,3 +36,5 @@ root                    (project root folder)
 ---
 * TODO: Add your names and emails here
 ### Austin Oldroyd | old20004@byui.edu
+### Tyler Caldron | cal16026@byui.edu
+
