@@ -3,6 +3,7 @@ import random
 class Word:
     def __init__(self):
         randomized_word = self.random_word()
+        return randomized_word
 
     def random_word(self):
         with open('jumper\game\words.csv', 'rt') as file:

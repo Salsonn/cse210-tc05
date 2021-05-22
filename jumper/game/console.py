@@ -22,12 +22,21 @@ class Console:
     print_parachute prints the parachute based on how many 
     times a user got an entry incorrect 
     '''
-
-    def __init__(self, times_user_was_wrong, randomized_word, list_of_letters_guessed):
-        
-        self.print_guesses(randomized_word, list_of_letters_guessed)
-        self.print_parachute(times_user_was_wrong)
     
+    def __init__(self):
+        self.letters = []
+
+    def user_guess(self):
+        letter_in_array = True
+        while letter_in_array:
+            letter_guess = input("What letter do you wish to guess? ").lower()
+            if letter_guess in self.letters:
+                letter_in_array = False
+            else:
+                print('That letter has already been guessed!')
+        self.letters.append(letter_guess)
+        return self.letters
+
     def print_guesses(self, randomized_word, list_of_letters_guessed):
         i = 0
         while i != len(randomized_word):
