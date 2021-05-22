@@ -11,16 +11,23 @@ class Director:
         self.keep_playing = True
 
     def start_game(self):
+        self.word = self.word.random_word()
+        self.parachute.create_graphics()
+        self.console.print_parachute()
         while self.keep_playing:
             self.get_inputs()
             self.do_updates()
             self.do_outputs()
+        self.console.print_parachute()
+        exit()
 
     def get_inputs():
-        pass
+        self.console.user_guess()
 
     def do_updates():
         pass
 
+
     def do_outputs():
-        pass
+        self.console.print_guesses()
+        self.console.print_parachute()
