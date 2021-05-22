@@ -16,7 +16,7 @@ class Director:
         self.console.print_parachute(self.word.incorrect_guesses)
         while self.keep_playing:
             self.get_inputs()
-            self.do_updates()
+            self.keep_playing = self.do_updates()
             self.do_outputs()
         self.console.print_parachute(self.word.incorrect_guesses)
         exit()
@@ -25,9 +25,7 @@ class Director:
         self.console.user_guess()
 
     def do_updates(self):
-        self.word.word_guessed()
-        if self.word.guessed:
-            self.keep_playing = False
+        return not self.word.word_guessed()
 
     def do_outputs(self):
         self.console.print_guesses(self.word.random_word, self.console.letters)
