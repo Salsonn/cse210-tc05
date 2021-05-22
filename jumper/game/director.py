@@ -18,7 +18,7 @@ class Director:
             self.get_inputs()
             self.do_updates()
             self.do_outputs()
-        self.console.print_parachute()
+        self.console.print_parachute(self.word.incorrect_guesses)
         exit()
 
     def get_inputs(self):
@@ -29,4 +29,4 @@ class Director:
 
     def do_outputs(self):
         self.console.print_guesses(self.word, self.console.letters)
-        self.console.print_parachute()
+        self.console.print_parachute(self.word.incorrect_guesses)
