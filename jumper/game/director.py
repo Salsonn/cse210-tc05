@@ -27,7 +27,6 @@ class Director:
     def do_updates(self):
         pass
 
-
     def do_outputs(self):
         self.console.print_guesses(self.word, self.console.letters)
         self.console.print_parachute()
