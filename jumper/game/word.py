@@ -1,4 +1,9 @@
 import random
+import os
+
+basedir = os.path.dirname(os.path.abspath(__file__))
+
+categorization_file = os.path.join(basedir,'words.csv')
 
 class Word:
     def __init__(self):
@@ -8,7 +13,7 @@ class Word:
         self.correct_guesses = []
 
     def random_word(self):
-        with open('jumper\game\words.csv', 'rt') as file:
+        with open(categorization_file, 'rt') as file:
             empty_array = []
             for i in file:
                 empty_array.append(i)
