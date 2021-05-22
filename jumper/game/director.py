@@ -25,8 +25,7 @@ class Director:
         self.console.user_guess()
 
     def do_updates(self):
-        pass
-
+        self.word.check_guess(self.console.letters[-1])
 
     def do_outputs(self):
         self.console.print_guesses(self.word, self.console.letters)
