@@ -21,13 +21,13 @@ class Director:
         self.console.print_parachute()
         exit()
 
-    def get_inputs():
+    def get_inputs(self):
         self.console.user_guess()
 
-    def do_updates():
+    def do_updates(self):
         pass
 
 
-    def do_outputs():
+    def do_outputs(self):
         self.console.print_guesses(self.word, self.console.letters)
         self.console.print_parachute()

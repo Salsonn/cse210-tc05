@@ -1,4 +1,5 @@
 from game.word import Word
+import random
 
 class Parachute:
     def __init__(self):
