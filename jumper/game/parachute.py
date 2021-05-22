@@ -23,3 +23,11 @@ class Parachute:
         if self.director.game_over:
             person[[0]] = '   X  \n'
             return person[[0]]
+        
+random_Word = []
+blank_Word = []
+word = random.choice(random_Word).lower
+
+for letters in random_Word:
+    blank_Word.append("_")
+print(blank_Word)
