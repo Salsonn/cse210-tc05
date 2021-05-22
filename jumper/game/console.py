@@ -1,19 +1,5 @@
-
-
 from os import times
-
-
-parachute = [
-    [' ___'],
-    ['/___\\'],
-    ['\\   /'],
-    ['\\ /']
-]
-person = [
-    [' 0'],
-    ['/|\\'],
-    ['/ \\']
-] 
+from game.parachute import Parachute
 
 class Console:
     '''
@@ -28,6 +14,7 @@ class Console:
     
     def __init__(self):
         self.letters = []
+        self.parachute = Parachute()
 
     def user_guess(self):
         letter_in_array = True
@@ -55,8 +42,13 @@ class Console:
             else:
                 print('_ ', end="")
             i += 1
+        print()
 
     def print_parachute(self, times_user_was_wrong):
-        print(times_user_was_wrong)
-
-
+        for i in range(times_user_was_wrong, len(self.parachute.parachute)):
+            print(self.parachute.parachute[i])
+        for i in range(len(self.parachute.person)):
+            if times_user_was_wrong == 5:
+                self.parachute.person[0] = '  X'
+            print(self.parachute.person[i])
+        print(self.parachute.ground)

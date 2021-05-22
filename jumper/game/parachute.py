@@ -4,6 +4,18 @@ import random
 class Parachute:
     def __init__(self):
         self.word = Word()
+        self.parachute = [
+            ' ___',
+            '/___\\',
+            '\\   /',
+            ' \\ /'
+            ]
+        self.person = [
+            '  0',
+            ' /|\\',
+            ' / \\'
+        ] 
+        self.ground = '^^^^^^^^^^^^'
 
     def create_graphics(self):
         sky = '__ __ __ __ __ \n\n'
@@ -14,21 +26,8 @@ class Parachute:
             ['\\ /']
             ]
         person = [
-            [' 0'],
-            ['/|\\'],
-            ['/ \\']
+            ' 0',
+            '/|\\',
+            '/ \\'
         ] 
         ground = '^^^^^^^^^^^^'
-
-    def change_layer6(self, person):
-        if self.director.game_over:
-            person[[0]] = '   X  \n'
-            return person[[0]]
-        
-# random_Word = []
-# blank_Word = []
-# word = random.choice(random_Word).lower
-
-# for letters in random_Word:
-#     blank_Word.append("_")
-# print(blank_Word)

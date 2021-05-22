@@ -19,6 +19,8 @@ class Director:
             self.keep_playing = self.do_updates()
             self.do_outputs()
         self.console.print_parachute(self.word.incorrect_guesses)
+        print('GAME OVER')
+        print(f"THE WORD WAS {self.word.random_word.upper()}")
         exit()
 
     def get_inputs(self):
@@ -27,6 +29,8 @@ class Director:
     def do_updates(self):
         self.word.letter_wrong(self.word.random_word, self.console.letters[-1])
         self.keep_playing = self.word.word_guessed()
+        if self.word.incorrect_guesses == 5:
+            self.keep_playing = False
         return self.keep_playing
 
     def do_outputs(self):

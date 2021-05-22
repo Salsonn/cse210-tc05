@@ -15,6 +15,7 @@ class Word:
             random_word = random.choice(empty_array)
             random_word = random_word.strip('\n')
             return random_word
+
     
     def word_guessed(self):
         random_word = "".join(set(self.random_word))
