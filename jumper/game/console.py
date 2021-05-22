@@ -1,5 +1,8 @@
 
 
+from os import times
+
+
 parachute = [
     [' ___'],
     ['/___\\'],
@@ -30,7 +33,7 @@ class Console:
         letter_in_array = True
         while letter_in_array:
             letter_guess = input("What letter do you wish to guess? ").lower()
-            if letter_guess in self.letters:
+            if letter_guess not in self.letters:
                 letter_in_array = False
             else:
                 print('That letter has already been guessed!')
@@ -47,13 +50,14 @@ class Console:
                     letter_guessed = True
             
             if letter_guessed:
-                print(f'{randomized_word[i]} ')
+                print(f'{randomized_word[i]} ', end="")
             
             else:
-                print('_ ')
+                print('_ ', end="")
             i += 1
 
     def print_parachute(self, times_user_was_wrong):
+        print(times_user_was_wrong)
         pass
 
 

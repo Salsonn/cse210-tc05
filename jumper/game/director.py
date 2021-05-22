@@ -11,9 +11,9 @@ class Director:
         self.keep_playing = True
 
     def start_game(self):
-        self.word = self.word.random_word()
+        # self.word = self.word.random_word()
         self.parachute.create_graphics()
-        self.console.print_parachute()
+        self.console.print_parachute(self.word.incorrect_guesses)
         while self.keep_playing:
             self.get_inputs()
             self.do_updates()
@@ -25,8 +25,11 @@ class Director:
         self.console.user_guess()
 
     def do_updates(self):
-        self.word.check_guess(self.console.letters[-1])
+        self.word.word_guessed()
+        if self.word.guessed:
+            self.keep_playing = False
 
     def do_outputs(self):
-        self.console.print_guesses(self.word, self.console.letters)
+        self.console.print_guesses(self.word.random_word, self.console.letters)
+        self.word.letter_wrong(self.word.random_word, self.console.letters[-1])
         self.console.print_parachute(self.word.incorrect_guesses)
