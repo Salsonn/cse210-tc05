@@ -5,7 +5,7 @@ class Word:
         self.random_word = self.random_word()
         self.incorrect_guesses = 0
         self.guessed = False
-        self.correct_letters = []
+        self.correct_guesses = []
 
     def random_word(self):
         with open('jumper\game\words.csv', 'rt') as file:
@@ -17,11 +17,14 @@ class Word:
             return random_word
     
     def word_guessed(self):
-        if len(self.correct_letters) == self.random_word:
-            self.guessed = True
+        random_word = "".join(set(self.random_word))
+        if len(random_word) == len(self.correct_guesses):
+            return False
+        else:
+            return True
 
     def letter_wrong(self, word, guess):
         if guess not in word:
             self.incorrect_guesses += 1
         else:
-            self.correct_letters.append(guess)
+            self.correct_guesses.append(guess)

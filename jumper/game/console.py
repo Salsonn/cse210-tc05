@@ -58,6 +58,5 @@ class Console:
 
     def print_parachute(self, times_user_was_wrong):
         print(times_user_was_wrong)
-        pass
 
 

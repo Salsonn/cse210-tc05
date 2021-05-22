@@ -25,9 +25,10 @@ class Director:
         self.console.user_guess()
 
     def do_updates(self):
-        return not self.word.word_guessed()
+        self.word.letter_wrong(self.word.random_word, self.console.letters[-1])
+        self.keep_playing = self.word.word_guessed()
+        return self.keep_playing
 
     def do_outputs(self):
         self.console.print_guesses(self.word.random_word, self.console.letters)
-        self.word.letter_wrong(self.word.random_word, self.console.letters[-1])
         self.console.print_parachute(self.word.incorrect_guesses)
