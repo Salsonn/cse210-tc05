@@ -29,5 +29,5 @@ class Director:
 
 
     def do_outputs():
-        self.console.print_guesses()
+        self.console.print_guesses(self.word, self.console.letters)
         self.console.print_parachute()
